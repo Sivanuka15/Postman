@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "36c4e54a-05c1-4599-89a4-d6f56ef69262",
+		"name": "MillionSpace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Testimonials",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"MillionSpaces\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"MillionSpaces\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/ui/testimonial",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"ui",
+						"testimonial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Medias",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/ui/media",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"ui",
+						"media"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
